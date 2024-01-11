@@ -1,0 +1,47 @@
+/* pieces.css */
+
+.piece {
+    width: 45px;  /* Adjusted width */
+    height: 50px; /* Adjusted height */
+    background-color: #c0c0c0;
+    border-radius: 5px; /* Adjusted border-radius */
+    position: relative;
+    overflow: hidden;
+}
+
+.piece b {
+    font-size: 18px; /* Adjusted font size */
+    color: white;
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    transform: none; /* Reset transform */
+}
+
+.piece img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    draggable: false;
+	position: absolute;
+    bottom: 0; 
+    left: 50%; 
+	transform: translateX(-50%);
+}
+
+.piece::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent; /* Adjusted size */
+    border-right: 15px solid transparent; /* Adjusted size */
+    border-bottom: 15px solid #555; /* Adjusted size and color */
+    position: absolute;
+    top: -15px; /* Adjusted distance from the top */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bb {
+            display: block;
+        }
