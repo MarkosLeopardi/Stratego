@@ -1,170 +1,170 @@
-# ADISE23_Stratego
+# Stratego – Web-Based Turn-Based Strategy Game
 
-Url: https://users.iee.ihu.gr/~it175128/ADISE23_Stratego/STRATEGO/views/login.php
+## Overview
 
-## Περιγραφή Παιχνιδιού
+This project is a **web-based implementation of the classic board game Stratego**, developed as part of a **university team project**.
 
-### Το stratego παίζεται ως εξής: 
+The goal of the project was to create a playable multiplayer strategy game where two players can log in, set up their pieces, and play against each other through a browser-based interface.
 
- Το STRATEGO είναι ένα κλασικό επιτραπέζιο παιχνίδι στρατηγικής για δύο παίχτες! 
-Κάθε παίχτης ορίζει τον στρατό του που αποτελείται από 40 πιόνια, 
-καθένα από τα οποία αντιπροσωπεύει συγκεκριμένη βαθμίδα αξιωματικών και στρατιωτών.
-Πρέπει να προσπαθήσετε να αιχμαλωτίσετε τη Σημαία του αντιπάλου καθώς προστατεύετε τη δική σας. 
- Πρώτα δημιουργείτε ένα μυστικό σχηματισμό τοποθετώντας τα πιόνια σας στο δικό σας πεδίο με τέτοιο τρόπο, 
-ώστε ο αντίπαλος να βλέπει το πίσω μέρος των πιονιών. 
-Τα νούμερα των πιονιών καθορίζουν το βαθμό τους. 
-Όσο μεγαλύτερος είναι ο αριθμός τόσο υψηλότερος είναι ο βαθμός. 
-Αν ένα πιόνι υψηλότερου βαθμού πάρει ένα πιόνι χαμηλότερου βαθμού, 
-το πιόνι με τον υψηλότερο βαθμό κερδίζει και το άλλο βγαίνει από το παιχνίδι. 
-Η Σημαία μπορεί να κατακτηθεί από οποιοδήποτε πιόνι του αντιπάλου μπορεί να μετακινηθεί.
+The application includes both **front-end gameplay interaction** and a **backend API/database structure** to manage the game state, board, players, and piece movement.
 
-### Οι κανόνες είναι οι :
- Τα κόκκινα ξεκινούν ! Οι παίκτες μετακινούν τα πιόνια τους. Μετακινείτε ένα πιόνι σε μια άδεια θέση ή σε μια θέση που βρίσκεται ένα πιόνι του αντιπάλου. Η τελευταία κίνηση ονομάζεται επίθεση. Κάθε παίκτης δικαιούται να μετακινήσει ένα πιόνι σε κάθε γύρο.
-Τα πιόνια μετακινούνται ένα τετράγωνο τη φορά μπροστά, πίσω, δεξιά ή αριστερά. Ο Ανιχνευτής εξαιρείται από αυτόν τον κανόνα, όπως εξαιρείται παρακάτω.
-Μόνο ένα πιόνι μπορεί να υπάρχει σε κάθε τετράγωνο. Δεν υπάρχει διαγώνια κίνηση ούτε μπορείτε να πηδήξετε τετράγωνα. Δεν μπορείτε, επίσης, να εισέλθετε ή να διασχίσετε τις δύο λίμνες που υπάρχουν στη μέση του ταμπλό. 
-Τα πιόνια μπορούν να μετακινούνται πίσω-μπρος μεταξύ δύο τετραγώνων μέχρι και 3 φορές. Αν ξεπεραστεί αυτός ο αριθμός, ο παίκτης που το έκανε δίνει τη θέση του στον αντίπαλο. 
-Η Σημαία και οι Βόμβες δεν μετακινούνται ποτέ. 
-Οι Ανιχνευτές (2) μπορούν να κινηθούν σε όσα ελεύθερα τετράγωνα θέλουν μπροστά, πίσω και πλαγίως (δεξιά και αριστερά). Δεν μπορούν όμως να πηδήξουν πάνω από τα πιόνια του δικού τους στρατού ή του στρατού του αντιπάλου. Δεν μπορούν να πηδήξουν πάνω από τις λίμνες. Είναι τα μοναδικά πιόνια που μπορούν να επιτεθούν από μεγάλη απόσταση. 
- Η επίθεση :
-Εκτός από τη Σημαία ή τη Βόμβα, ένα πιόνι μπορεί να επιτεθεί σε πιόνι αντιπάλου που βρίσκεται ακριβώς μπροστά του, πίσω του, δεξιά ή αριστερά του. Το επιτιθέμενο πιόνι χτυπά ελαφρά το πιόνι του αντιπάλου και αποκαλύπτει το βαθμό του. Τότε, το αμυνόμενο πιόνι πρέπει να φανερώσει και αυτό το βαθμό του. Όποιο πιόνι έχει χαμηλότερο βαθμό χάνει και φεύγει από το παιχνίδι. Αν ο επιτιθέμενος κερδίσει, τότε παίρνει τη θέση του χαμένου πιονιού. Αν ο αμυνόμενος κερδίσει, δεν υπάρχει καμία κίνηση. Αν και τα δύο πιόνια είναι του ίδιου βαθμού, τότε βγαίνουν και τα δύο.
-Ο Ανιχνευτής μπορεί να επιτεθεί από όποια απόσταση θέλει, αρκεί τα τετράγωνα μεταξύ αυτού και του αμυνόμενου πιονιού να είναι ελεύθερα (άδεια) και να κινείται σε ευθεία γραμμή. Ο Ανιχνευτής λοιπόν μπορεί να επιτεθεί σε μια Κατάσκοπο από μακρινή απόσταση.
-Η επίθεση είναι πάντα προαιρετική !
+---
 
+## Live Demo
 
+[Play the game here](https://users.iee.ihu.gr/~it175128/ADISE23_Stratego/STRATEGO/views/login.php)
 
+---
 
-Η βάση μας κρατάει τους εξής πίνακες και στοιχεία 
+## Game Description
 
-board, για το ταμπλό του παιχνιδιού
-players, για τους παίκτες
-pieces,για τα πιονια
-game_status,για την κατασταση του παιχνιδιου
-moves, για αποθηκευση της καθε κινησης
-RemovedPiecesPool, για τα πιονια που εχουν βγει απο το παιχνίδι
+Stratego is a classic **two-player strategy board game** where each player controls an army of 40 pieces with different ranks and roles.
 
+The objective is to **capture the opponent’s flag** while protecting your own.
 
-Η εφαρμογή απαπτύχθηκε μέχρι το σημείο που μπορουν να παιξουν μεταξύ τους δυο παιχτες
-υλοποιήσαμε register/login, dragNdrop στα pieces, ελέγχους στις κινήσεις, κατασταση παιχνιδιου
-δεν προλάβαμε να υλοποιήσουμε: multiple game sessions, τις ειδικές κινήσεις του scout 
-να συνεχίζεται το παιχνίδι αν καποιος κανει logout και επιστρέψει.
+Each piece has different movement and attack rules, and the game requires both tactical positioning and strategic decision-making.
 
-Συντελεστές
-Περιγράψτε τις αρμοδιότητες της ομάδας.
+---
 
-Τούμπας Δημήτριος: Σχεδιασμός mysql database,PHP API,ajax
+## Purpose
 
-Λεοπάρντι Μάρκος Αντώνιος: PHP API, Javascript, ajax
+The main purpose of this project was to:
 
-Μιχαηλία Γάλλε: HTML, Javascript, PHP API, SQL
+- Build a more complete **interactive web application**
+- Practice implementing **turn-based game logic**
+- Work with **PHP APIs**, **JavaScript**, **AJAX**, and **MySQL**
+- Simulate a more complex system involving **authentication, state management, and gameplay rules**
 
-....
+---
 
-## Περιγραφή API
+## Tech Stack
 
-### Methods
+- **PHP**
+- **JavaScript**
+- **AJAX**
+- **MySQL**
+- **HTML5**
+- **CSS3**
 
-#### Board
-Ανάγνωση Board
-GET /getData 
-Επιστρέφει το Board.
+---
 
-Αρχικοποίηση Board
-POST /save_board_state
-Αρχικοποιεί το Board, δηλαδή το παιχνίδι. Γίνονται reset τα πάντα σε σχέση με το παιχνίδι. Επιστρέφει το Board.
+## Features
 
-Update Board
-POST /UpdateBoard.php
-Ενημερώνει το Board, δηλαδή το παιχνίδι. Γίνονται set τα pieces και οι θέσεις στο board.
+- User **register / login**
+- Two-player game setup
+- Piece placement on the board
+- **Drag and drop** interaction for game pieces
+- Turn-based gameplay
+- Movement validation
+- Game state management
+- Board state persistence through the database
+- Tracking of removed pieces
 
-#### Piece
-Ανάγνωση Θέσης/Πιονιού
-GET /board/piece/:x/:y/
-Κάνει την κίνηση του πιονιού από την θέση x,y στην νέα θέση. Προφανώς ελέγχεται η κίνηση αν είναι νόμιμη καθώς και αν είναι η σειρά του παίκτη να παίξει με βάση το token. Επιστρέφει τα στοιχεία από το Board με συντεταγμένες x,y. Περιλαμβάνει το χρώμα του πιονιού και τον τύπο.
+---
 
-Μεταβολή Θέσης Πιονιού
-PUT /board/piece/:x/:y/
-Json Data:
+## Database Structure
 
-Field	Description	Required
-x	Η νέα θέση x	yes
-y	Η νέα θέση y	yes
-Επιστρέφει τα στοιχεία από το Board με συντεταγμένες x,y. Περιλαμβάνει το χρώμα του πιονιού και τον τύπο
+The database includes the following main tables:
 
-#### Player
-Ανάγνωση στοιχείων παίκτη
-GET /players/:p
-Επιστρέφει τα στοιχεία του παίκτη p ή όλων των παικτών αν παραληφθεί. Το p μπορεί να είναι 'B' ή 'W'.
+- **board** → stores the game board state
+- **players** → stores player information and login state
+- **pieces** → stores all Stratego piece definitions
+- **game_status** → tracks game progression and turn state
+- **moves** → stores move history
+- **RemovedPiecesPool** → tracks pieces removed from the game
 
-Καθορισμός στοιχείων παίκτη
-PUT /players/:p
-Json Data:
+---
 
-Field	Description	Required
-username	Το username για τον παίκτη p.	yes
-color	To χρώμα που επέλεξε ο παίκτης p.	yes
-Επιστρέφει τα στοιχεία του παίκτη p και ένα token. Το token πρέπει να το χρησιμοποιεί ο παίκτης καθόλη τη διάρκεια του παιχνιδιού.
+## API Overview
 
-#### Status
-Ανάγνωση κατάστασης παιχνιδιού
-
-GET /checkTurnChange/
-Επιστρέφει το στοιχείο player_turn απο τον πίνακα game_status.
-
-## Entities
+The application includes a backend API for managing:
 
 ### Board
-Το board είναι ένας πίνακας, ο οποίος στο κάθε στοιχείο έχει τα παρακάτω:
- 
-Attribute | Description	| Values
-|---------|-------------|----------|
-position_x  | H συντεταγμένη x του τετραγώνου | 1..10 |
-position_y	 | H συντεταγμένη y του τετραγώνου | 1..10 |
-piece_color	| To χρώμα του πιονιού | 'R','B', null |
-piece_id	| To Πιόνι που υπάρχει στο τετράγωνο |'1','2',...'9','10','11','12', null|
+- Reading board data
+- Initializing/resetting the game
+- Updating the board state
 
-### Players
+### Piece
+- Reading piece position and information
+- Updating piece movement
 
-O κάθε παίκτης έχει τα παρακάτω στοιχεία:
+### Player
+- Retrieving player information
+- Assigning player details and tokens
 
-Attribute | Description | Values |
-|---------|-------------|----------|
-player_id| To id του παίκτη.Αρχικοποιείται όταν κάποιος κάνει register | int auto increment |
-player_name | To πραγματικο ονομα του παίκτη | String |
-player_password | κωδικος για log in | String |
-player_username | Όνομα παιχνιδιού του παίκτη | String |
-piece_color| To χρώμα που παίζει ο παίκτης,το παίρνει όταν κάνει login | 'R','B' |
-logged_in | flag για το log state|tiny Int|
-ready_to_play | flag για το ready state(να εχει πατήσει το ready button) | tiny Int |
+### Status
+- Checking turn changes and game status
 
-### Game_status
-H κατάσταση παιχνιδιού έχει τα παρακάτω στοιχεία:
+---
 
-Attribute |	Description |	Values |
-|---------|-------------|----------|
-status | 	Κατάσταση	| 'inactive', 'initialized', 'started', 'ended', 'aborded'|
-player_turn	| To χρώμα του παίκτη που παίζει	| 'B','W',null|
-winner	| To χρώμα του παίκτη που κέρδισε |	'R','B',null |
-last_change	| Τελευταία αλλαγή/ενέργεια στην κατάσταση του παιχνιδιού	| timestamp |
+## What I Practiced
 
-### empty_Board
-To empty_board είναι ίδιο με το Board αλλά παραμένει άδειο και με την χρήση του procedure ResetBoard()
-το Board γίνεται empty_board.
+Through this project, I worked on:
 
-### RemovedPiecesPool
-για τα πιόνια που βγήκαν από το παιχνίδι
-Attribute |	Description |	Values |
-|---------|-------------|----------|
-piece_color	| To χρώμα του πιονιού | 'R','B', null |
-piece_id	| Tα Πιόνια  |'1','2',...'9','10','11','12' |
-piece_count | το πλήθος των πιονιών | int |
+- Implementing **game logic and rule validation**
+- Building functionality around **turn-based interactions**
+- Working with **AJAX requests** and PHP backend communication
+- Understanding how to manage **game state** through a database
+- Structuring a project with both **front-end and backend logic**
+- Thinking more in terms of **systems and gameplay flow**
 
-### pieces
-τα πιόνια του παιχνιδιου
-Attribute |	Description |	Values |
-|---------|-------------|----------|
-piece_id	| Tα Πιόνια  |'1','2',...'9','10','11','12', |
-|piece_type | το ονομα του πιονιου | enum('Flag','Spy','Scout','Miner','Sergeant','Lieutenant','Captain','Major','Colonel','General','Marshal','Bomb') NOT NULL|
-piece_rank	| το rank  | int |
-piece_count | το πλήθος των πιονιών | int |
+---
 
+## My Contribution
+
+This project was developed as part of a university team project.
+
+My contribution focused mainly on:
+
+- **PHP API development**
+- **JavaScript gameplay logic**
+- **AJAX communication**
+- Supporting the overall interaction between the front-end and backend
+
+---
+
+## Current Limitations
+
+Due to time constraints, some features were not fully completed:
+
+- Multiple game sessions
+- Full implementation of the **Scout’s special movement**
+- Persistent gameplay continuation if a player logs out and returns
+
+---
+
+## Future Improvements
+
+Possible future improvements include:
+
+- Support for multiple simultaneous games
+- Better session persistence
+- Full implementation of all special Stratego rules
+- Improved UI/UX and responsiveness
+- Cleaner architecture and code refactoring
+
+---
+
+## Run Locally
+
+(Adjust this section depending on your local setup)
+
+- Import the MySQL database
+- Run the project through a local PHP server (e.g. XAMPP / Laragon / Apache)
+- Configure database connection settings
+- Open the application in your browser
+
+---
+
+## Team
+
+- **Dimitrios Toumpas** – MySQL database design, PHP API, AJAX
+- **Markos Leopardi** – PHP API, JavaScript, AJAX
+- **Galle Michailia** – HTML, JavaScript, PHP API, SQL
+
+---
+
+## Author
+
+Developed as part of a university project.
 
