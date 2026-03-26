@@ -133,29 +133,6 @@ Due to time constraints, some features were not fully completed:
 
 ---
 
-## Future Improvements
-
-Possible future improvements include:
-
-- Support for multiple simultaneous games
-- Better session persistence
-- Full implementation of all special Stratego rules
-- Improved UI/UX and responsiveness
-- Cleaner architecture and code refactoring
-
----
-
-## Run Locally
-
-(Adjust this section depending on your local setup)
-
-- Import the MySQL database
-- Run the project through a local PHP server (e.g. XAMPP / Laragon / Apache)
-- Configure database connection settings
-- Open the application in your browser
-
----
-
 ## Team
 
 - **Dimitrios Toumpas** – MySQL database design, PHP API, AJAX
